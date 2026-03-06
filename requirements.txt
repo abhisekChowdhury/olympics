@@ -1,0 +1,13 @@
+pandas
+numpy
+scikit-learn
+lightgbm
+tensorflow
+scikeras
+shap
+streamlit
+plotly
+matplotlib
+seaborn
+jupyter
+nbformat
