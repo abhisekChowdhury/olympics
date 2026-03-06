@@ -56,31 +56,35 @@ tab1, tab2, tab3, tab4 = st.tabs([
 # ================================
 with tab1:
     st.header("Executive Summary")
-    st.markdown("""
-    **Project Overview**
-    This dashboard presents an end-to-end data science solution designed to estimate an Olympic athlete's historical medal success based on their attributes and national standing. 
-
-    **Dataset Details**
-    The dataset is sourced from historical archives of athletes who attended the Olympic Games over the past century. It encompasses approximately 8,500 records and includes 30 features covering physical attributes (height, weight, age, gender), athlete experience (Olympics attended), and overarching national team statistics (historical country medals).
-
-    **The Prediction Task**
-    Our goal is to accurately predict the `total_medals_won` by an individual athlete throughout their career based on their demographic footprint and historical participation.
-
-    **Business Value: Why Predict Medals?**
-    For sports organizations, Olympic committees, and national scouting agencies, understanding the exact drivers of medal success is incredibly valuable. By modeling these performance factors, decision-makers can strategically allocate funding, optimize athlete retention programs, and objectively gauge how individual potential intersects with national team infrastructure.
-
-    **Modeling Approach**
-    We employed a robust machine learning pipeline utilizing a 70/30 train-test split (random state 42 for reproducibility). We trained and evaluated five distinct algorithms ranging from simple Linear Regressions to complex Neural Networks. All tree-based models were tuned using cross-validation to ensure strong generalization and prevent overfitting.
-
-    **Key Results & Best Model**
-    Among our tested approaches, **LightGBM emerged as the best-performing model** achieving the lowest RMSE (2.573). It effectively captured the complex interactions between national infrastructure and individual athletic traits. Linear models underperformed, underscoring that Olympic success relies on complex, non-linear factors rather than simple additive ones.
-
-    **Interpretability & SHAP Insights**
-    We utilized SHAP (SHapley Additive exPlanations) to peer inside the model's decisions. The analysis definitively revealed that **athlete experience (Total Olympics Attended)** and **national program strength (Country Total Medals)** are far more influential on an individual's success than raw demographic attributes like height or weight.
-    """)
     
-    st.write(f"**Total Records:** {len(df)}")
-    st.write(f"**Total Features:** {df.shape[1]}")
+    st.subheader("📌 Project Overview")
+    st.write("This dashboard presents an end-to-end data science solution designed to estimate an Olympic athlete's historical medal success based on their attributes and national standing.")
+    
+    st.subheader("📊 Dataset Details")
+    st.write("The dataset is sourced from historical archives of athletes who attended the Olympic Games over the past century. It encompasses approximately 8,500 records and includes 30 features covering physical attributes (height, weight, age, gender), athlete experience (Olympics attended), and overarching national team statistics (historical country medals).")
+    
+    st.subheader("🎯 The Prediction Task")
+    st.write("Our goal is to accurately predict the `total_medals_won` by an individual athlete throughout their career based on their demographic footprint and historical participation.")
+    
+    st.subheader("💡 Business Value: Why Predict Medals?")
+    st.write("For sports organizations, Olympic committees, and national scouting agencies, understanding the exact drivers of medal success is incredibly valuable. By modeling these performance factors, decision-makers can strategically allocate funding, optimize athlete retention programs, and objectively gauge how individual potential intersects with national team infrastructure.")
+    
+    st.subheader("🛠️ Modeling Approach")
+    st.write("We employed a robust machine learning pipeline utilizing a 70/30 train-test split (random state 42 for reproducibility). We trained and evaluated five distinct algorithms ranging from simple Linear Regressions to complex Neural Networks. All tree-based models were tuned using cross-validation to ensure strong generalization and prevent overfitting.")
+    
+    st.subheader("🏆 Key Results & Best Model")
+    st.success("**LightGBM emerged as the best-performing model** achieving the lowest RMSE (2.573).")
+    st.write("It effectively captured the complex interactions between national infrastructure and individual athletic traits. Linear models underperformed, underscoring that Olympic success relies on complex, non-linear factors rather than simple additive ones.")
+    
+    st.subheader("🧠 Interpretability & SHAP Insights")
+    st.info("We utilized SHAP (SHapley Additive exPlanations) to peer inside the model's decisions.")
+    st.write("The analysis definitively revealed that **athlete experience (Total Olympics Attended)** and **national program strength (Country Total Medals)** are far more influential on an individual's success than raw demographic attributes like height or weight.")
+    
+    st.markdown("---")
+    
+    col1, col2, _ = st.columns([1, 1, 2])
+    col1.metric("Total Records", len(df))
+    col2.metric("Total Features", df.shape[1])
     
 # ================================
 # TAB 2: Descriptive Analytics
