@@ -1,6 +1,6 @@
 Model,MAE,RMSE,R2,Best_Params
 Linear Regression,2.228322924434292,2.5752754323113294,-0.0023041843203299717,{}
 Decision Tree,2.2580984940140962,2.6159997301154183,-0.034254843875155316,"{'regressor__max_depth': 5, 'regressor__min_samples_leaf': 10}"
-Random Forest,2.2364450809740277,2.5908545716852283,-0.014467751758777236,"{'regressor__max_depth': 10, 'regressor__n_estimators': 100}"
+Random Forest,2.2364450809740277,2.590854571685228,-0.014467751758777014,"{'regressor__max_depth': 10, 'regressor__n_estimators': 100}"
 LightGBM,2.2259179512931926,2.573405690891894,-0.0008492957973444959,"{'regressor__learning_rate': 0.01, 'regressor__max_depth': 5, 'regressor__n_estimators': 50}"
-Neural Net,2.2563860416412354,2.6144654651432124,-0.033042073249816895,"{'epochs': 50, 'batch_size': 32}"
+Neural Net,2.250554084777832,2.6033496846732818,-0.0242764949798584,"{'epochs': 50, 'batch_size': 32}"
